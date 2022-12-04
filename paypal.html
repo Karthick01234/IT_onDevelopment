@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="paypal.css">
+  </head>
+  <body>
+    <div id="login">
+        <img src="logo.png" alt="logo"/><br><br>
+        <input id="email_or_phone" name="email_or_phone" type="text" placeholder="Email or Mobile Number"/><br><br>
+        <span id="imp">Please Enter Email or Mobile number</span><br>
+        <button onclick="otp()">Next</button>
+    
+    </div>
+
+    <div id="otp">
+        <input class="o" type="text" maxlength="1" pattern="[0-9]+" name="otp" id="1"/> 
+        <input class="o" type="text" maxlength="1" pattern="[0-9]+" name="otp" id="2"/> 
+        <input class="o" type="text" maxlength="1" pattern="[0-9]+" name="otp" id="3"/> 
+        <input class="o" type="text" maxlength="1" pattern="[0-9]+" name="otp" id="4"/> 
+        <input class="o" type="text" maxlength="1" pattern="[0-9]+" name="otp" id="5"/> 
+        <input class="o" type="text" maxlength="1" pattern="[0-9]+" name="otp" id="6"/> 
+        <span id="otpvalid">Invalid OTP</span><br>
+        <br>
+        <br>
+        <button onclick="verify()" id="verify">Verify</button>
+        <button onclick="back()">Back</button>
+        
+    </div>
+
+    <div id="pass">
+        <label for="p1">New Password :      </label>
+        <input type="text" minlength="8" maxlength="16"  name="np" id="p1"/><br><br>
+        <label for="p1">Confirm Password :  </label>
+        <input type="text" minlength="8" maxlength="16"  name="cp" id="p2"/><br><br>
+        <span id="passwordcheck"></span><br>
+        <button id="submit" onclick="password()">Submit</button> 
+    </div>  
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+	<script src="paypal.js"></script>
+  </body>
+</html>
