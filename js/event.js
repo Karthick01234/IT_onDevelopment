@@ -55,26 +55,24 @@ export function eventListen() {
     };
 
     for (let i = 0; i < val.otp_value.length; i++) {
-        val.otp_value[i].addEventListener('keyup', function (event) {
-            if (event.key === "Backspace") {
-                val.otp_value[i].value = '';
-                if (i !== 0) val.otp_value[i - 1].focus();
-            }
-            else {
-                if (event.keyCode > 47 && event.keyCode < 58) {
+        val.otp_value[i].addEventListener('input', function (event) {
+            if (event.data) {
+                let val_code = event.data.charCodeAt(0);
+                if (val_code > 47 && val_code < 58) {
                     val.otp_msg.innerHTML = '';
-                    val.otp_value[i].value = event.key;
-                    if (i !== val.otp_value.length - 1) val.otp_value[i + 1].focus();
+                    val.otp_value[i].value = event.data;
+                    if (i !== val.otp_value.length - 1) {
+                        val.otp_value[i + 1].value = '';
+                        val.otp_value[i + 1].focus();
+                    }
                     if (i === val.otp_value.length - 1 && val.otp_value[i].value !== '') {
                         verify();
                     }
-                    event.preventDefault();
                 }
                 else {
                     val.otp_value[i].value = '';
                     if (i !== val.otp_value.length - 1) val.otp_value[i].focus();
                     val.otp_msg.innerHTML = "Invalid otp <br />";
-                    event.preventDefault();
                 }
             }
         });
