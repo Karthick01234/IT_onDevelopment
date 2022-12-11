@@ -1,0 +1,22 @@
+body, html {
+    height: 100%;
+}
+img {
+    height: 30px;
+    width: 30px;
+}
+#holder {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 420px;
+    height: 420px;
+    margin-top: -210px;
+    margin-left: -210px;
+    border: 1px lightblue;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px 10px lightblue;
+}
+.btn-align {
+    text-align: center;
+}
