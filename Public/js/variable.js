@@ -22,6 +22,7 @@ export let popover = new bootstrap.Popover(pass_new, {
   trigger: "focus",
   title: "",
   content: "",
+  placement: "top",
 });
 export function pass_bool_change() {
   pass_bool = true;

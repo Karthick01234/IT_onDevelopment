@@ -1,22 +1,48 @@
-body, html {
-    height: 100%;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  height: 100vh;
+  margin: 0;
 }
 img {
-    height: 30px;
-    width: 30px;
+  height: 30px;
+  width: 30px;
 }
 #holder {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 420px;
+  width: 420px;
+  height: 420px;
+  border: 1px lightblue;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px 10px lightblue;
+}
+@media only screen and (max-width: 600px) {
+  #holder {
+    width: 320px;
     height: 420px;
-    margin-top: -210px;
-    margin-left: -210px;
-    border: 1px lightblue;
-    border-radius: 5px;
-    box-shadow: 10px 10px 10px 10px lightblue;
+  }
+  body {
+    overflow: hidden;
+  }
 }
 .btn-align {
-    text-align: center;
+  text-align: center;
+}
+.author {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+.custom-popover {
+  max-width: 400px; /* Adjust the width as needed */
+}
+
+/* Divide popover content into two halves */
+.popover-content .half {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 10px;
 }

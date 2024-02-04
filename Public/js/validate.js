@@ -31,27 +31,38 @@ class ValidateJs {
     }
   }
   containsCheck(value) {
+    let lcorner = ``;
+    let rcorner = ``;
     let passage = ``;
     let special_char = /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/;
-    passage += /[a-z]/.test(value)
+    lcorner += /[a-z]/.test(value)
       ? `<p class="text-success"><i class="bi bi-check"></i>&nbsp;&nbsp;<small>Atleast one lowercase letter</small></p>`
       : `<p class="text-danger"><i class="bi bi-x"></i>&nbsp;&nbsp;<small>Atleast one lowercase letter</small></p>`;
-    passage += /[A-Z]/.test(value)
+    lcorner += /[A-Z]/.test(value)
       ? `<p class="text-success"><i class="bi bi-check"></i>&nbsp;&nbsp;<small>Atleast one uppercase letter</small></p>`
       : `<p class="text-danger"><i class="bi bi-x"></i>&nbsp;&nbsp;<small>Atleast one uppercase letter</small></p>`;
-    passage += special_char.test(value)
+    lcorner += special_char.test(value)
       ? `<p class="text-success"><i class="bi bi-check"></i>&nbsp;&nbsp;<small>Atleast one Special characters</small></p>`
       : `<p class="text-danger"><i class="bi bi-x"></i>&nbsp;&nbsp;<small>Atleast one Special characters</small></p>`;
-    passage += /\d/.test(value)
+    rcorner += /\d/.test(value)
       ? `<p class="text-success"><i class="bi bi-check"></i>&nbsp;&nbsp;<small>Atleast one number</small></p>`
       : ` <p class="text-danger"><i class="bi bi-x"></i>&nbsp;&nbsp;<small>Atleast one number</small></p>`;
-    passage +=
+    rcorner +=
       value.length >= 8
         ? `<p class="text-success"><i class="bi bi-check"></i>&nbsp;&nbsp;<small>Minimum 8 characters</small></p>`
         : ` <p class="text-danger"><i class="bi bi-x"></i>&nbsp;&nbsp;<small>Minimum 8 characters</small></p>`;
-    passage += /\s/g.test(value)
+    rcorner += /\s/g.test(value)
       ? `<p class="text-danger"><i class="bi bi-x"></i>&nbsp;&nbsp;<small>No Space characters</small></p>`
       : `<p class="text-success"><i class="bi bi-check"></i>&nbsp;&nbsp;<small>No Space characters</small></p>`;
+    passage =
+      '<div class="popover-content">' +
+      '<div class="half" id="popover-left">' +
+      lcorner +
+      "</div>" +
+      '<div class="half" id="popover-right">' +
+      rcorner +
+      "</div>" +
+      "</div>";
     return passage;
   }
   sendOtp() {

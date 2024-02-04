@@ -7,8 +7,8 @@ export function eventListen() {
   val.email.addEventListener("click", function () {
     val.email_msg.innerHTML = "";
   });
-
   val.email_but.addEventListener("click", function () {
+    alert(window.innerWidth);
     let val_email = validateObj.validate("email", val.email.value);
     if (val_email === "success") {
       val.login.style.display = "none";
@@ -38,7 +38,7 @@ export function eventListen() {
 
   function verify() {
     let actual_otp = fetch_otp();
-    if (actual_otp !== "" && actual_otp.length == 6) {
+    if (actual_otp !== "" && actual_otp.length === 5) {
       let val_otp = validateObj.validate("otp", actual_otp);
       if (val_otp === "success") {
         val.otp.style.display = "none";
