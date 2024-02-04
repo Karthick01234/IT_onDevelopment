@@ -1,9 +1,5 @@
 {
-  "ExpandedNodes": [
-    "",
-    "\\js",
-    "\\view"
-  ],
-  "SelectedNode": "\\js\\variable.js",
+  "ExpandedNodes": ["", "\\it", "\\it\\css", "\\it\\img", "\\it\\layout"],
+  "SelectedNode": "\\it\\layout\\layout.js",
   "PreviewInSolutionExplorer": false
 }
