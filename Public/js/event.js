@@ -8,7 +8,6 @@ export function eventListen() {
     val.email_msg.innerHTML = "";
   });
   val.email_but.addEventListener("click", function () {
-    alert(window.innerWidth);
     let val_email = validateObj.validate("email", val.email.value);
     if (val_email === "success") {
       val.login.style.display = "none";
