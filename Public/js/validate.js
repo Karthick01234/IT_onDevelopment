@@ -1,7 +1,7 @@
 class ValidateJs {
   validate(type, value) {
     if (type == "email") {
-      if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+      if (/^\w++(?:[.-]?\w+)*+@\w++(?:[.-]?\w+)*+(?:\.\w{2,3})+$/.test(value)) {
         if (this.sendOtp(value)) {
           return "success";
         } else {

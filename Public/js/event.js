@@ -12,7 +12,7 @@ export function eventListen() {
     if (val_email === "success") {
       val.login.style.display = "none";
       val.otp.style.display = "block";
-      val.otp_mail.innerHTML = "*******" + val.email.value.slice(-8);
+      val.otp_mail.innerText = "*******" + val.email.value.slice(-8);
       val.otp_send.disabled = true;
       setTimeout(function () {
         val.otp_loader.style.display = "none";
